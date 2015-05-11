@@ -1,0 +1,28 @@
+inherit kf5
+
+NAME="kf5-kjsembed"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 JavaScript embedding library"
+DESCRIPTION="KSJEmbed provides a method of binding JavaScript objects to
+QObjects, so you can script your applications."
+
+SRC_URI="mirror://kde/stable/frameworks/${VERSION%\.*}/portingAids/${NAME#kf5-}-${VERSION}.tar.xz"
+
+PKG_NAMES="libKF5JsEmbed5 libKF5JsEmbed-devel"
+libKF5JsEmbed5_CONTENTS="
+	usr/bin/cygKF5JsEmbed-5.dll
+	usr/bin/kjscmd5.exe
+	usr/bin/kjsconsole.exe
+	usr/share/doc/
+	usr/share/locale/
+	usr/share/man/
+"
+libKF5JsEmbed_devel_REQUIRES="libKF5I18n-devel libKF5JS-devel libQt5Core-devel libQt5Gui-devel libQt5Svg-devel libQt5UiTools-devel"
+libKF5JsEmbed_devel_CONTENTS="
+	usr/include/KF5/KJsEmbed/
+	usr/lib/cmake/KF5JsEmbed/
+	${QT5_MKSPECSDIR#/}/modules/qt_KJsEmbed.pri
+	usr/lib/libKF5JsEmbed.dll.a
+"
