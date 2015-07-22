@@ -1,0 +1,24 @@
+--- origsrc/kjsembed-5.12.0/src/kjsembed/kjsembed.cpp	2015-07-05 04:08:27.000000000 -0500
++++ src/kjsembed-5.12.0/src/kjsembed/kjsembed.cpp	2015-07-21 20:41:39.540559800 -0500
+@@ -72,6 +72,7 @@
+ namespace KJS
+ {
+ #ifndef QTONLY_WEBKIT
++KJSEMBED_EXPORT
+ UString::UString(const QString &d)
+ {
+     uint len = d.length();
+@@ -80,11 +81,13 @@ UString::UString(const QString &d)
+     m_rep = UString::Rep::create(dat, len);
+ }
+ 
++KJSEMBED_EXPORT
+ QString UString::qstring() const
+ {
+     return QString((QChar *) data(), size());
+ }
+ 
++KJSEMBED_EXPORT
+ QString Identifier::qstring() const
+ {
+     return QString((QChar *) data(), size());

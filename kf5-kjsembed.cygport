@@ -9,6 +9,7 @@ DESCRIPTION="KSJEmbed provides a method of binding JavaScript objects to
 QObjects, so you can script your applications."
 
 SRC_URI="mirror://kde/stable/frameworks/${VERSION%\.*}/portingAids/${NAME#kf5-}-${VERSION}.tar.xz"
+PATCH_URI="5.12.0-dllexport.patch"
 
 PKG_NAMES="libKF5JsEmbed5 libKF5JsEmbed-devel"
 libKF5JsEmbed5_CONTENTS="
